@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Voting from './Voting'
+import Voting from './components/Voting'
 
 
 function App() {
