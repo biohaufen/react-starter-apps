@@ -53,7 +53,7 @@ class WidgetList extends Component {
     return (
         <div>
             <ul className="languages">
-            {this.state.languages.map(languageItem => <WidgetItem languageName={languageItem.name}/>)}
+            {this.state.languages.map(languageItem => <WidgetItem key={languageItem.id} languageName={languageItem.name} languageId={languageItem.id}/>)}
             </ul>
         </div>
     )
