@@ -1,13 +1,37 @@
-import React,{Component} from 'react';
-import './App.css';
- 
+import React from "react";
+import { Carousel } from "react-responsive-carousel";
+import "./App.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 let styles = {
-    margin: 'auto',
-    width: '500px'
-  };
+  margin: "auto",
+  width: "500px",
+};
 
-  /* Use this data to create an array of objects that you loop through
+let images = [
+  {
+    alt: "japan",
+    link:
+      "https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_480,h_384/cities/e8fnw35p6zgusq218foj.webp",
+  },
+  {
+    alt: "hong-kong",
+    link:
+      "https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_480,h_384/cities/jrfyzvgzvhs1iylduuhj.jpg",
+  },
+  {
+    alt: "singapore",
+    link:
+      "https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_480,h_384/cities/c1cklkyp6ms02tougufx.webp",
+  },
+  {
+    alt: "las-vegas",
+    link:
+      "https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_480,h_384/cities/liw377az16sxmp9a6ylg.webp",
+  },
+];
+
+/* Use this data to create an array of objects that you loop through
   to create the carousel. 
 
   Hong Kong: https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_480,h_384/cities/jrfyzvgzvhs1iylduuhj.jpg
@@ -17,15 +41,22 @@ let styles = {
 
   Use the react-responsive-carousel package to create the Carousel: 
   https://www.npmjs.com/package/react-responsive-carousel
-
+           {images.map(imageProp => <img key={imageProp.alt} alt={imageProp.alt} src={imageProp.link}/>)}
 
   */
 
 const Carsl = () => {
-	return (
-		<div style={styles}>
-			 Welcome to the Carousel..
-		</div>
-	  )
-}
+  return (
+    <div style={styles}>
+      Welcome to the Carousel..
+      <div>
+        <Carousel>
+          {images.map((imageProp) => (
+            <img key={imageProp.alt} alt={imageProp.alt} src={imageProp.link} />
+          ))}
+        </Carousel>
+      </div>
+    </div>
+  );
+};
 export default Carsl;
